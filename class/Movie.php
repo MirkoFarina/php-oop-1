@@ -6,6 +6,7 @@ class Movie {
     public $rating;
     public $description;
     public $genres;
+    public $poster = 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png';
 
     /**
      * @param String $_title
@@ -21,7 +22,31 @@ class Movie {
         $this->genres = $_genres;
     }
 
-    public function getRating($_rating){
+    public function getDescription(){
+        if(!$this->description) {
+            return 'Description not found';
+        }else {
+            return 'Description: <br> ' . $this->description;
+        }
+    }
+
+    public function rating($_rating = null) {
         $this->rating = $_rating;
+    }
+
+    public function getRating(){
+       if(!$this->rating) {
+        return 'No rated';
+       }else {
+        return 'Rating: ' . $this->rating . ' Stelle';
+       }
+    }
+
+    public function getPoster($_poster = null){
+        if(!$_poster) {
+            return $this->poster;
+        }else {
+            return $this->poster = $_poster;
+        }
     }
 }

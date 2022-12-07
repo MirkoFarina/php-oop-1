@@ -8,6 +8,9 @@ $film_1->getRating('5');
 
 var_dump($film_1);
 var_dump($film_1->rating);
+
+$film_2= new Movie('Troll', 'Nv', new Genres('Norvegese', 'Film d\'azione'));
+var_dump($film_2);
 ?>
 
 <!DOCTYPE html>
